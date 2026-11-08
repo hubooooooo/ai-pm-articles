@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="description" content="把模型能力、业务流程和用户收益连起来的产品思考。">
+<title>AI 产品经理手记 · 观察与实践</title>
+<link rel="stylesheet" href="prototype.css"><script src="prototype.js" defer></script>
+</head>
+<body class="editorial">
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="masthead">
+  <a class="brand" href="editorial.html"><span class="brand-mark" aria-hidden="true"></span>AI 产品经理手记</a>
+  <div class="edition">NOTES ON BUILDING<br>THINGS THAT ACTUALLY HELP.</div>
+  <nav aria-label="主导航"><a href="#articles">文章 ↗</a><a class="about-link" href="#about">关于</a><button class="theme-toggle" aria-label="切换到深色模式"><svg viewBox="0 0 20 20" aria-hidden="true"><path d="M16 12.5A6.7 6.7 0 0 1 7.5 4a6.7 6.7 0 1 0 8.5 8.5Z"/></svg></button></nav>
+</header>
+<main id="main">
+  <section class="journal-hero" aria-labelledby="hero-title">
+    <div class="journal-copy">
+      <p class="eyebrow"><span class="serial">随手记，认真想。</span> / FIELD NOTES</p>
+      <h1 id="hero-title">让 AI 多做一步，<br>让用户<em>少忙一点。</em></h1>
+      <p class="intro">模型在进步，判断也要往前走。<br>记录 AI 产品里的具体问题，<br>以及那些反复推敲之后，留下的看法。</p>
+      <a class="journal-cta" href="https://hubooooooo.github.io/ai-pm-articles/2026/11/07/user-effort-over-agent-count.html"><span>阅读第一篇手记</span><span aria-hidden="true">↗</span></a>
+      <div class="journal-detail"><span>产品思考 / 实际问题</span><span>持续记录中</span></div>
+    </div>
+    <div class="paper-stage">
+      <div class="paper-back" aria-hidden="true"></div>
+      <article class="note-paper" aria-labelledby="paper-title">
+        <div class="paper-head"><span>FIELD NOTE — 001</span><time datetime="2026-11-07">NOV. 07, 2026</time></div>
+        <h2 class="paper-title" id="paper-title">用户到底<br><span>省了多少事？</span></h2>
+        <p class="paper-topic">关于 Agent 架构、执行边界与用户的时间</p>
+        <svg class="paper-diagram" viewBox="0 0 380 165" role="img" aria-label="从需求经过模型理解、系统执行，再到用户使用结果的工作流程">
+          <defs><marker id="arrow" viewBox="0 0 7 7" refX="6" refY="3.5" markerWidth="5" markerHeight="5" orient="auto"><path d="M0 0 6 3.5 0 7" class="diagram-line"/></marker></defs>
+          <path class="soft-line" d="M11 26H365M11 127H365M37 12V149M342 12V149"/>
+          <rect class="paper-box" x="17" y="44" width="73" height="46" rx="2"/><rect class="paper-box" x="149" y="42" width="81" height="49" rx="2"/><rect class="paper-box" x="287" y="45" width="76" height="46" rx="2"/>
+          <path class="diagram-line" d="M90 66H144M231 67H282" marker-end="url(#arrow)"/>
+          <text x="54" y="72" text-anchor="middle">理解需求</text><text x="190" y="72" text-anchor="middle">执行与校验</text><text x="325" y="72" text-anchor="middle">结果可用</text>
+          <text x="54" y="32" class="diagram-caption" text-anchor="middle">01 / MODEL</text><text x="190" y="31" class="diagram-caption" text-anchor="middle">02 / SYSTEM</text><text x="325" y="33" class="diagram-caption" text-anchor="middle">03 / USER</text>
+          <path class="diagram-accent" d="M307 103c-20 23-54 29-98 25-37-3-62-8-83-23" marker-end="url(#arrow)"/><text x="220" y="148" class="diagram-caption" text-anchor="middle">HOW MUCH WORK IS LEFT?</text>
+          <path class="diagram-accent" d="M296 81c18 4 36 3 57-1"/>
+        </svg>
+        <div class="paper-findings">
+          <p class="paper-finding"><span><span class="number">01</span>沿着信息依赖，安排工作</span><span class="aside">架构判断</span></p>
+          <p class="paper-finding"><span><span class="number">02</span>把执行边界，交给系统检查</span><span class="aside">业务约束</span></p>
+          <p class="paper-finding"><span><span class="number">03</span>看用户还要做多少事</span><span class="aside">价值验证</span></p>
+        </div>
+        <div class="paper-footer"><span>AI PRODUCT NOTES / KEEP THINKING</span><span class="paper-stamp" aria-hidden="true">持续<br>思考</span></div>
+      </article>
+      <p class="marginalia">沿着一条真实任务，走到结果被使用。</p>
+    </div>
+  </section>
+  <div class="journal-bottom"><p>把模型能力、业务流程和用户收益连起来。<br>每一篇，都是一次具体问题的拆解。</p><span>OBSERVE. QUESTION. BUILD.</span></div>
+  <section id="articles" class="article-section" aria-labelledby="articles-title">
+    <div class="section-head"><h2 class="eyebrow" id="articles-title">THE NOTEBOOK / 手记目录</h2><span class="count">01 篇</span></div>
+    <article class="article-entry">
+      <time class="post-date" datetime="2026-11-07">2026.11.07<span>AGENT / 产品判断</span></time>
+      <div><h2><a href="https://hubooooooo.github.io/ai-pm-articles/2026/11/07/user-effort-over-agent-count.html">用户到底省了多少事？</a><small>从「折叠子 Agent」谈 AI 办公产品的价值</small></h2><p>系统生成了一份完整的结果，用户的工作就真的变少了吗？从会议助手这个具体场景，重新判断一个 AI 产品的价值。</p></div>
+      <a class="read" href="https://hubooooooo.github.io/ai-pm-articles/2026/11/07/user-effort-over-agent-count.html">阅读全文 ↗</a>
+    </article>
+  </section>
+</main>
+<footer id="about" class="site-foot"><p class="foot-note">AI 产品经理手记<br>关于技术、产品，以及使用它们的人。</p><a href="https://github.com/hubooooooo/ai-pm-articles">GitHub ↗</a><a class="back-to-directions" href="index.html">查看两个方向 ↗</a></footer>
+</body></html>

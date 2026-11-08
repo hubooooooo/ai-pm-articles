@@ -1,0 +1,234 @@
+[
+  {
+    "page": "hero.html",
+    "size": "desktop",
+    "width": 1440,
+    "documentWidth": 1440,
+    "ready": "true",
+    "duplicateIds": [],
+    "wide": [],
+    "mainTitle": {
+      "x": 75,
+      "y": 224,
+      "w": 365,
+      "h": 230.15625,
+      "right": 440,
+      "bottom": 454.15625
+    },
+    "paperOverflow": 0,
+    "paperFooter": null,
+    "bottomPadding": null,
+    "articleLinks": 2,
+    "controls": {
+      "assembled": true,
+      "annotations": true
+    },
+    "theme": true,
+    "errors": []
+  },
+  {
+    "page": "hero.html",
+    "size": "tablet",
+    "width": 1024,
+    "documentWidth": 1024,
+    "ready": "true",
+    "duplicateIds": [],
+    "wide": [],
+    "mainTitle": {
+      "x": 58,
+      "y": 220,
+      "w": 307,
+      "h": 173.15625,
+      "right": 365,
+      "bottom": 393.15625
+    },
+    "paperOverflow": 0,
+    "paperFooter": null,
+    "bottomPadding": null,
+    "articleLinks": 2,
+    "controls": {
+      "assembled": true,
+      "annotations": true
+    },
+    "theme": true,
+    "errors": []
+  },
+  {
+    "page": "hero.html",
+    "size": "mobile",
+    "width": 390,
+    "documentWidth": 390,
+    "ready": "true",
+    "duplicateIds": [],
+    "wide": [],
+    "mainTitle": {
+      "x": 41,
+      "y": 147.796875,
+      "w": 308,
+      "h": 142.78125,
+      "right": 349,
+      "bottom": 290.578125
+    },
+    "paperOverflow": 0,
+    "paperFooter": null,
+    "bottomPadding": null,
+    "articleLinks": 2,
+    "controls": {
+      "assembled": true,
+      "annotations": true
+    },
+    "theme": true,
+    "errors": []
+  },
+  {
+    "page": "hero.html",
+    "size": "small-mobile",
+    "width": 320,
+    "documentWidth": 320,
+    "ready": "true",
+    "duplicateIds": [],
+    "wide": [],
+    "mainTitle": {
+      "x": 41,
+      "y": 147.796875,
+      "w": 238,
+      "h": 142.78125,
+      "right": 279,
+      "bottom": 290.578125
+    },
+    "paperOverflow": 0,
+    "paperFooter": null,
+    "bottomPadding": null,
+    "articleLinks": 2,
+    "controls": {
+      "assembled": true,
+      "annotations": true
+    },
+    "theme": true,
+    "errors": []
+  },
+  {
+    "page": "editorial.html",
+    "size": "desktop",
+    "width": 1440,
+    "documentWidth": 1440,
+    "ready": "true",
+    "duplicateIds": [],
+    "wide": [],
+    "mainTitle": {
+      "x": 86,
+      "y": 284.296875,
+      "w": 619,
+      "h": 198.15625,
+      "right": 705,
+      "bottom": 482.453125
+    },
+    "paperOverflow": 0,
+    "paperFooter": {
+      "x": 799.7562255859375,
+      "y": 667.8680419921875,
+      "w": 515.54248046875,
+      "h": 107.384033203125,
+      "right": 1315.2987060546875,
+      "bottom": 775.2520751953125
+    },
+    "bottomPadding": 27,
+    "articleLinks": 3,
+    "controls": null,
+    "theme": true,
+    "errors": []
+  },
+  {
+    "page": "editorial.html",
+    "size": "tablet",
+    "width": 1024,
+    "documentWidth": 1024,
+    "ready": "true",
+    "duplicateIds": [],
+    "wide": [],
+    "mainTitle": {
+      "x": 58,
+      "y": 297.90625,
+      "w": 451.5,
+      "h": 150.9375,
+      "right": 509.5,
+      "bottom": 448.84375
+    },
+    "paperOverflow": 0,
+    "paperFooter": {
+      "x": 569.9260864257812,
+      "y": 650.42822265625,
+      "w": 389.52386474609375,
+      "h": 96.35882568359375,
+      "right": 959.449951171875,
+      "bottom": 746.7870483398438
+    },
+    "bottomPadding": 22,
+    "articleLinks": 3,
+    "controls": null,
+    "theme": true,
+    "errors": []
+  },
+  {
+    "page": "editorial.html",
+    "size": "mobile",
+    "width": 390,
+    "documentWidth": 390,
+    "ready": "true",
+    "duplicateIds": [],
+    "wide": [],
+    "mainTitle": {
+      "x": 31,
+      "y": 152.796875,
+      "w": 328,
+      "h": 117,
+      "right": 359,
+      "bottom": 269.796875
+    },
+    "paperOverflow": 0,
+    "paperFooter": {
+      "x": 73.20668029785156,
+      "y": 895.1373901367188,
+      "w": 278.04986572265625,
+      "h": 70.78900146484375,
+      "right": 351.2565460205078,
+      "bottom": 965.9263916015625
+    },
+    "bottomPadding": 23,
+    "articleLinks": 3,
+    "controls": null,
+    "theme": true,
+    "errors": []
+  },
+  {
+    "page": "editorial.html",
+    "size": "small-mobile",
+    "width": 320,
+    "documentWidth": 320,
+    "ready": "true",
+    "duplicateIds": [],
+    "wide": [],
+    "mainTitle": {
+      "x": 31,
+      "y": 152.796875,
+      "w": 258,
+      "h": 99,
+      "right": 289,
+      "bottom": 251.796875
+    },
+    "paperOverflow": 0,
+    "paperFooter": {
+      "x": 73.07349395751953,
+      "y": 880.1878662109375,
+      "w": 208.31622314453125,
+      "h": 64.6881103515625,
+      "right": 281.3897171020508,
+      "bottom": 944.8759765625
+    },
+    "bottomPadding": 23,
+    "articleLinks": 3,
+    "controls": null,
+    "theme": true,
+    "errors": []
+  }
+]

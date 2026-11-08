@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AI 产品经理手记 · Hero 原型</title>
+<style>
+:root{
+  color-scheme: light dark;
+  --background: light-dark(oklch(94.5% .012 78), oklch(20.5% .007 68));
+  --foreground: light-dark(oklch(26% .05 310), oklch(93% .025 90));
+  --muted-foreground: light-dark(oklch(47% .035 310), oklch(75% .02 85));
+  --accent: light-dark(oklch(55% .19 30), oklch(69% .16 33));
+  --muted: light-dark(oklch(96.5% .008 78), oklch(24% .009 70));
+  --hairline: light-dark(oklch(88.5% .012 78), oklch(30.5% .011 70));
+  --font: Georgia, "Times New Roman", "PingFang SC", "Hiragino Sans GB", "Noto Sans CJK SC", "Songti SC", serif;
+}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;min-width:320px;font-family:var(--font);font-size:15px;line-height:1.25;color:var(--foreground);background:var(--background);-webkit-font-smoothing:antialiased}
+::selection{color:var(--background);background:var(--accent)}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+.site-header{position:sticky;top:0;z-index:3;background:color-mix(in oklab,var(--background) 88%,transparent);backdrop-filter:blur(12px);border-bottom:1px solid var(--hairline)}
+.site-header-inner{max-width:1200px;margin-inline:auto;padding-inline:24px;height:68px;display:flex;align-items:center;justify-content:space-between;gap:12px}
+.site-title{display:inline-flex;align-items:center;text-decoration:none;font-size:15px;letter-spacing:.01em}
+.site-mark{width:9px;height:9px;margin-inline-end:8px;background:var(--accent);border-radius:2px}
+.site-actions{display:flex;gap:4px}
+.pill{display:inline-flex;align-items:center;justify-content:center;height:30px;padding:0 12px;font-size:12px;letter-spacing:.02em;font-family:inherit;color:inherit;text-decoration:none;background:color-mix(in oklab,var(--muted) 60%,transparent);backdrop-filter:blur(12px);border:0;border-radius:12px;cursor:pointer}
+
+.hero{position:relative;height:clamp(560px,92svh,900px);overflow:hidden;border-bottom:1px solid var(--hairline)}
+.stage{position:absolute;inset:0;cursor:grab;touch-action:none;outline:none}
+.stage:active{cursor:grabbing}
+.stage canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
+.overlay{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.overlay .leader{stroke:var(--muted-foreground);stroke-width:1;opacity:.55}
+.overlay .marker{fill:var(--accent)}
+.overlay text{font-size:11px;letter-spacing:.02em}
+.overlay .label text{fill:var(--muted-foreground)}
+.overlay .label .part{fill:var(--accent)}
+.overlay .sheet{stroke:var(--hairline);fill:none}
+.overlay .sheet-fill{fill:var(--muted)}
+.overlay .sheet-key{fill:var(--muted-foreground)}
+.overlay .sheet-text{fill:var(--foreground)}
+
+.cursor{position:absolute;left:0;top:0;z-index:2;transform:translate(var(--x,0px),var(--y,0px));pointer-events:none}
+.cursor span{display:inline-block;transform:translate(12px,12px);font-size:11px;color:var(--muted-foreground);letter-spacing:.06em;font-variant-numeric:tabular-nums;white-space:nowrap}
+.copy{position:absolute;left:24px;bottom:28px;z-index:2;max-width:480px}
+.copy h1{font-size:clamp(19px,2.6vw,24px);font-weight:400;line-height:1.25;margin:0 0 12px}
+.copy p{font-size:14px;line-height:1.5;color:var(--muted-foreground);margin:0}
+.hint{position:absolute;right:24px;bottom:28px;z-index:2;font-size:11px;color:var(--muted-foreground);letter-spacing:.04em;margin:0}
+.notice{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);z-index:2;font-size:12px;color:var(--accent);margin:0}
+</style>
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.0/build/three.module.js"}}
+</script>
+</head>
+<body>
+<header class="site-header">
+  <div class="site-header-inner">
+    <a class="site-title" href="#"><span class="site-mark" aria-hidden="true"></span>AI 产品经理手记</a>
+    <div class="site-actions">
+      <a class="pill" href="#">GitHub</a>
+    </div>
+  </div>
+</header>
+<section class="hero">
+  <div class="stage" tabindex="0" role="group" aria-label="可交互线描图：主 Agent 循环与工具、技能、评测、权限、知识库、模型节点。拖拽旋转，按 C 复制角度" data-ready="">
+    <canvas aria-label="Line drawing of a central agent loop connected to six capability nodes"></canvas>
+    <svg class="overlay" aria-hidden="true" viewBox="0 0 1200 800"></svg>
+    <div class="cursor"><span>x 0000 y 0000</span></div>
+    <p class="notice" hidden>此浏览器不支持 WebGL，仅显示静态预览。</p>
+    <div class="copy">
+      <h1>把模型能力、业务流程和用户收益连起来。</h1>
+      <p>AI 产品经理手记 · 主 Agent 循环与它的技能、工具与评测</p>
+    </div>
+    <p class="hint">拖拽旋转 · Shift 横滚 · C 复制角度</p>
+  </div>
+</section>
+<script type="module">
+import * as THREE from 'three';
+
+const stage = document.querySelector('.stage');
+const canvas = stage.querySelector('canvas');
+const overlay = stage.querySelector('.overlay');
+const cursorEl = stage.querySelector('.cursor');
+const cursorXY = cursorEl.querySelector('span');
+const notice = stage.querySelector('.notice');
+const hero = document.querySelector('.hero');
+
+const PALETTES = {
+  light: { ink: '#463e4d', inkSoft: '#7a7183', accent: '#b15432', fill: '#463e4d', fillOpacity: 0.06, link: 0.28 },
+  dark:  { ink: '#e8e1d6', inkSoft: '#b0a89c', accent: '#d98a5a', fill: '#e8e1d6', fillOpacity: 0.05, link: 0.32 }
+};
+const darkMQ = matchMedia('(prefers-color-scheme: dark)');
+const palette = () => darkMQ.matches ? PALETTES.dark : PALETTES.light;
+
+let renderer, scene, camera, group, centerNode;
+const nodes = [];
+const NODE_DEFS = [
+  { id: 'T-01', name: '工具', pos: [2.0, 1.0, 0.73] },
+  { id: 'S-01', name: '技能', pos: [1.67, 0.8, -1.4] },
+  { id: 'E-01', name: '评测', pos: [-2.06, -0.41, 1.1] },
+  { id: 'G-01', name: '权限', pos: [1.76, -1.18, -1.02] },
+  { id: 'K-01', name: '知识库', pos: [0.29, 1.66, 1.63] },
+  { id: 'M-01', name: '模型', pos: [-1.56, 1.51, -0.9] }
+];
+const CENTER = { id: 'A-01', name: '主 Agent 循环' };
+
+try {
+  renderer = new THREE.WebGLRenderer({ canvas, alpha: true, antialias: true });
+} catch (e) {
+  notice.hidden = false;
+  throw e;
+}
+renderer.setPixelRatio(Math.min(devicePixelRatio, 2));
+scene = new THREE.Scene();
+camera = new THREE.PerspectiveCamera(34, 1, 0.1, 100);
+camera.position.set(0, 0.4, 8.6);
+camera.lookAt(0, 0, 0);
+group = new THREE.Group();
+scene.add(group);
+
+function makeNode(geo, opts) {
+  const g = new THREE.Group();
+  const mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
+    color: opts.fill, transparent: true, opacity: opts.fillOpacity, depthWrite: true, side: THREE.DoubleSide
+  }));
+  const edges = new THREE.LineSegments(
+    new THREE.EdgesGeometry(geo, opts.threshold),
+    new THREE.LineBasicMaterial({ color: opts.edge, transparent: true, opacity: 0.9 })
+  );
+  g.add(mesh, edges);
+  return g;
+}
+
+function build() {
+  const p = palette();
+  while (group.children.length) group.remove(group.children[0]);
+  centerNode = makeNode(new THREE.IcosahedronGeometry(0.92, 1), {
+    edge: p.accent, fill: p.fill, threshold: 26
+  });
+  group.add(centerNode);
+  for (const d of NODE_DEFS) {
+    const v = new THREE.Vector3(...d.pos);
+    const g = makeNode(new THREE.OctahedronGeometry(0.27, 0), {
+      edge: p.ink, fill: p.fill, threshold: 12
+    });
+    g.position.copy(v);
+    group.add(g);
+    const line = new THREE.Line(
+      new THREE.BufferGeometry().setFromPoints([new THREE.Vector3(0, 0, 0), v]),
+      new THREE.LineBasicMaterial({ color: p.inkSoft, transparent: true, opacity: p.link })
+    );
+    group.add(line);
+    nodes.push({ def: d, mesh: g, line, v });
+  }
+}
+build();
+darkMQ.addEventListener('change', build);
+
+const svgNS = 'http://www.w3.org/2000/svg';
+function el(tag, attrs, parent) {
+  const e = document.createElementNS(svgNS, tag);
+  for (const k in attrs) e.setAttribute(k, attrs[k]);
+  if (parent) parent.appendChild(e);
+  return e;
+}
+
+const labelEls = [];
+const sheet = {};
+function buildOverlay() {
+  overlay.innerHTML = '';
+  const defs = [{ def: CENTER, v: new THREE.Vector3(0, 0, 0) }, ...nodes];
+  for (const { def, v } of defs) {
+    const g = el('g', { class: 'label' }, overlay);
+    const leader = el('line', { class: 'leader' }, g);
+    const marker = el('rect', { class: 'marker', width: 5, height: 5 }, g);
+    const text = el('text', { 'text-anchor': 'middle' }, g);
+    const t1 = el('tspan', { class: 'part' }, text);
+    const t2 = el('tspan', {}, text);
+    t1.textContent = def.id + '  ';
+    t2.textContent = def.name;
+    labelEls.push({ g, leader, marker, text, v });
+  }
+  const sg = el('g', { class: 'sheet' }, overlay);
+  const bg = el('rect', { class: 'sheet-fill', rx: 4 }, sg);
+  sheet.bg = bg; sheet.g = sg;
+  const rows = [
+    ['Scale', '1:1', false],
+    ['Nodes', String(1 + NODE_DEFS.length), false],
+    ['Links', String(NODE_DEFS.length), false],
+    ['Yaw', '−1.7°', true]
+  ];
+  rows.forEach((r, i) => {
+    const k = el('text', { class: 'sheet-key', x: 12, y: 29 + i * 15, 'data-row': i }, sg);
+    k.textContent = r[0];
+    const t = el('text', { class: 'sheet-text', x: 138, y: 29 + i * 15, 'text-anchor': 'end', 'data-row': i }, sg);
+    t.textContent = r[1];
+    if (r[2]) sheet.yaw = t;
+  });
+}
+buildOverlay();
+
+const SIZE = { w: 0, h: 0 };
+function resize() {
+  const r = hero.getBoundingClientRect();
+  SIZE.w = Math.max(1, Math.round(r.width));
+  SIZE.h = Math.max(1, Math.round(r.height));
+  renderer.setSize(SIZE.w, SIZE.h, false);
+  camera.aspect = SIZE.w / SIZE.h;
+  camera.updateProjectionMatrix();
+  // 按视口适配模型缩放：锚点最大 x≈2.72、y≈2.19（半径 2.06/1.66 × 1.32）
+  const halfW = 2.63 * camera.aspect;
+  const s = Math.min(1, halfW / 2.87, 2.63 / 2.34);
+  group.scale.setScalar(s);
+  overlay.setAttribute('viewBox', `0 0 ${SIZE.w} ${SIZE.h}`);
+  overlay.setAttribute('width', SIZE.w);
+  overlay.setAttribute('height', SIZE.h);
+  const sw = 150, sh = 15 * 4 + 16;
+  sheet.g.setAttribute('transform', `translate(${SIZE.w - sw - 20} 0)`);
+  sheet.bg.setAttribute('x', 0);
+  sheet.bg.setAttribute('y', 16);
+  sheet.bg.setAttribute('width', sw);
+  sheet.bg.setAttribute('height', sh);
+  sheet.g.querySelectorAll('text').forEach((t) => {
+    t.setAttribute('y', 29 + Number(t.getAttribute('data-row')) * 15);
+  });
+  sheet.g.querySelectorAll('text.sheet-text').forEach((t) => t.setAttribute('x', 138));
+}
+resize();
+new ResizeObserver(resize).observe(hero);
+
+const CENTER_ANCHOR = new THREE.Vector3(0, -1.35, 0);
+const state = { yaw: -0.21, pitch: 0, roll: 0, vyaw: 0, vpitch: 0, vroll: 0 };
+const LIMIT = { yaw: 24, pitch: 12, roll: 8 };
+const tmp = new THREE.Vector3();
+const tmp2 = new THREE.Vector3();
+
+let dragging = false, lastX = 0, lastY = 0, shiftKey = false;
+const reduced = matchMedia('(prefers-reduced-motion: reduce)').matches;
+if (!reduced) {
+  stage.addEventListener('pointerdown', (e) => {
+    dragging = true;
+    lastX = e.clientX; lastY = e.clientY;
+    shiftKey = e.shiftKey;
+    stage.setPointerCapture(e.pointerId);
+  });
+  stage.addEventListener('pointermove', (e) => {
+    const r = stage.getBoundingClientRect();
+    cursorEl.style.setProperty('--x', (e.clientX - r.left) + 'px');
+    cursorEl.style.setProperty('--y', (e.clientY - r.top) + 'px');
+    cursorXY.textContent = 'x ' + String(Math.round(e.clientX - r.left)).padStart(4, '0') +
+      ' y ' + String(Math.round(e.clientY - r.top)).padStart(4, '0');
+    if (!dragging) return;
+    const dx = e.clientX - lastX, dy = e.clientY - lastY;
+    lastX = e.clientX; lastY = e.clientY;
+    if (shiftKey) state.vroll += dx * 0.0035;
+    else {
+      state.vyaw += dx * 0.0035;
+      state.vpitch += dy * 0.0022;
+    }
+  });
+  stage.addEventListener('pointerup', () => { dragging = false; });
+  stage.addEventListener('pointercancel', () => { dragging = false; });
+  stage.addEventListener('keydown', (e) => {
+    if (e.key === 'c' || e.key === 'C') {
+      const d = (x) => (x * 180 / Math.PI).toFixed(1) + '°';
+      navigator.clipboard.writeText(`yaw ${d(state.yaw)} pitch ${d(state.pitch)} roll ${d(state.roll)}`)
+        .catch(() => {});
+    }
+  });
+}
+
+const DEG = Math.PI / 180;
+function spring(v, target, limit) {
+  v *= 0.92;
+  if (target > limit) target = limit;
+  if (target < -limit) target = -limit;
+  target = target + v * 14;
+  return target;
+}
+
+function animate() {
+  requestAnimationFrame(animate);
+  state.yaw = spring(state.vyaw, state.yaw, LIMIT.yaw);
+  state.pitch = spring(state.vpitch, state.pitch, LIMIT.pitch);
+  state.roll = spring(state.vroll, state.roll, LIMIT.roll);
+  group.rotation.set(state.pitch * DEG, state.yaw * DEG, state.roll * DEG, 'YXZ');
+  group.updateMatrixWorld();
+  renderer.render(scene, camera);
+  updateOverlay();
+}
+
+function updateOverlay() {
+  const centerWorld = tmp.set(0, 0, 0);
+  group.localToWorld(centerWorld);
+  const toCam = tmp2.copy(camera.position).sub(centerWorld).normalize();
+  const all = [{ def: CENTER, v: new THREE.Vector3(0, 0, 0) }, ...nodes];
+  const halfW = SIZE.w / 2, halfH = SIZE.h / 2;
+  all.forEach((item, i) => {
+    const L = labelEls[i];
+    const isCenter = item.def.id === 'A-01';
+    const p = item.v.clone();
+    group.localToWorld(p);
+    const dir = p.clone().sub(centerWorld);
+    let behind = false;
+    if (!isCenter) behind = dir.clone().normalize().dot(toCam) < 0.05;
+    const np = p.project(camera);
+    const anchor = isCenter
+      ? centerWorld.clone().add(CENTER_ANCHOR)
+      : centerWorld.clone().add(dir.clone().multiplyScalar(1.32));
+    const ap = anchor.project(camera);
+    const nx = np.x * halfW + halfW, ny = -np.y * halfH + halfH;
+    const ax = ap.x * halfW + halfW, ay = -ap.y * halfH + halfH;
+    const axC = Math.min(SIZE.w - 24, Math.max(24, ax));
+    const ayC = Math.min(SIZE.h - 20, Math.max(20, ay));
+    const visible = !behind && np.z < 1 && ap.z < 1 && nx > -60 && nx < SIZE.w + 60 && ny > -60 && ny < SIZE.h + 60;
+    L.g.setAttribute('opacity', visible ? '1' : '0');
+    if (!visible) return;
+    L.leader.setAttribute('x1', nx); L.leader.setAttribute('y1', ny);
+    L.leader.setAttribute('x2', axC); L.leader.setAttribute('y2', ayC);
+    L.marker.setAttribute('x', nx - 2.5); L.marker.setAttribute('y', ny - 2.5);
+    L.text.setAttribute('x', axC);
+    L.text.setAttribute('y', ayC + 4);
+  });
+  if (sheet.yaw) {
+    const d = (state.yaw * 180 / Math.PI);
+    sheet.yaw.textContent = (d >= 0 ? '' : '−') + Math.abs(d).toFixed(1) + '°';
+  }
+  stage.setAttribute('data-ready', '');
+}
+
+animate();
+</script>
+</body>
+</html>
