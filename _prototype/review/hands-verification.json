@@ -1,0 +1,133 @@
+{
+  "samples": [
+    {
+      "name": "desktop",
+      "width": 1440,
+      "documentWidth": 1440,
+      "title": "让想法相遇",
+      "heroText": "让想法相遇",
+      "controls": 0,
+      "handCount": 2,
+      "tipDistance": 0,
+      "leftTip": {
+        "x": 719.9100341796875,
+        "y": 518.7069091796875,
+        "w": 0.17999267578125,
+        "h": 0.179931640625,
+        "cx": 720.0000305175781,
+        "cy": 518.796875
+      },
+      "rightTip": {
+        "x": 719.9100341796875,
+        "y": 518.7069091796875,
+        "w": 0.17999267578125,
+        "h": 0.179931640625,
+        "cx": 720.0000305175781,
+        "cy": 518.796875
+      },
+      "titleAboveContact": true,
+      "titleCentered": true,
+      "hardwarePresent": false,
+      "articleLinks": 2
+    },
+    {
+      "name": "tablet",
+      "width": 1024,
+      "documentWidth": 1024,
+      "title": "让想法相遇",
+      "heroText": "让想法相遇",
+      "controls": 0,
+      "handCount": 2,
+      "tipDistance": 0,
+      "leftTip": {
+        "x": 511.9360046386719,
+        "y": 465.932861328125,
+        "w": 0.128021240234375,
+        "h": 0.128021240234375,
+        "cx": 512.0000152587891,
+        "cy": 465.9968719482422
+      },
+      "rightTip": {
+        "x": 511.9360046386719,
+        "y": 465.932861328125,
+        "w": 0.128021240234375,
+        "h": 0.128021240234375,
+        "cx": 512.0000152587891,
+        "cy": 465.9968719482422
+      },
+      "titleAboveContact": true,
+      "titleCentered": true,
+      "hardwarePresent": false,
+      "articleLinks": 2
+    },
+    {
+      "name": "mobile",
+      "width": 390,
+      "documentWidth": 390,
+      "title": "让想法相遇",
+      "heroText": "让想法相遇",
+      "controls": 0,
+      "handCount": 2,
+      "tipDistance": 0,
+      "leftTip": {
+        "x": 194.9625244140625,
+        "y": 482.2124938964844,
+        "w": 0.074981689453125,
+        "h": 0.07501220703125,
+        "cx": 195.00001525878906,
+        "cy": 482.25
+      },
+      "rightTip": {
+        "x": 194.9625244140625,
+        "y": 482.2124938964844,
+        "w": 0.074981689453125,
+        "h": 0.07501220703125,
+        "cx": 195.00001525878906,
+        "cy": 482.25
+      },
+      "titleAboveContact": true,
+      "titleCentered": true,
+      "hardwarePresent": false,
+      "articleLinks": 2
+    },
+    {
+      "name": "small-mobile",
+      "width": 320,
+      "documentWidth": 320,
+      "title": "让想法相遇",
+      "heroText": "让想法相遇",
+      "controls": 0,
+      "handCount": 2,
+      "tipDistance": 0,
+      "leftTip": {
+        "x": 159.9625244140625,
+        "y": 452.5093688964844,
+        "w": 0.074981689453125,
+        "h": 0.07501220703125,
+        "cx": 160.00001525878906,
+        "cy": 452.546875
+      },
+      "rightTip": {
+        "x": 159.9625244140625,
+        "y": 452.5093688964844,
+        "w": 0.074981689453125,
+        "h": 0.07501220703125,
+        "cx": 160.00001525878906,
+        "cy": 452.546875
+      },
+      "titleAboveContact": true,
+      "titleCentered": true,
+      "hardwarePresent": false,
+      "articleLinks": 2
+    },
+    {
+      "name": "autoplay",
+      "transformChanged": true
+    },
+    {
+      "name": "reduced-motion",
+      "animationOff": true
+    }
+  ],
+  "errors": []
+}

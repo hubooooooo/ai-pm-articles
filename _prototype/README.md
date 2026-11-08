@@ -1,14 +1,21 @@
-# 博客首页与视觉方向
+# 博客首页与历史视觉方向
 
-直接打开 `index.html` 比较两个方案。无需启动服务，页面没有 CDN、字体或 WebGL 依赖。
+当前首页改为左右两只线稿机械手，在中央轻触。直接打开 `hands.html` 或 `hero.html` 查看，无需服务或外部依赖。
 
-- `hero.html`：已选择的 A 方向。博客级主题，连续轴测动画，支持拖动、方向键、展开 / 聚合和播放 / 暂停。
+- 中央仅保留“让想法相遇”，没有工程标注、介绍段落或图解控制面板。
+- 两手自动缓慢靠近、触碰、回弹。支持系统减少动态效果；离屏和后台暂停。
+- 运行 `python3 build_hands.py` 更新 SVG、预览与 `_includes/home-hands.html`。
+- 正式资源为 `assets/css/home-hands.css` 和 `assets/js/home-hands.js`。
+
+历史方案保留作对照：
+
+- `engineering.template.html`：此前的精密装置方案。
 - `editorial.html`：编辑手记，大字排版与带批注的纸页。
 - `hero-v1.html`：保留的旧版，仅供对照；它仍需要联网加载 three.js。
 - `review/`：实际浏览器渲染截图。
 
-修改 `engineering.template.html` 或 `build_art.py` 后，运行 `python3 build_art.py --site` 更新图解、A 预览和站点资源。共享样式位于 `prototype.css`，交互位于 `prototype.js`。
+历史装置方案的源文件为 `engineering.template.html`、`build_art.py`、`prototype.css` 和 `prototype.js`，不再用于当前首页。
 
-A 已接入 `_layouts/home.html`。正式首页文章目录读取 `site.posts`，不绑定首篇文章。图解的“观察、场景、实践、复盘、判断、写作”是博客的长期主题。
+首页位于 `_layouts/home.html`，文章目录继续读取 `site.posts`，不绑定首篇文章。
 
-系统启用减少动态效果时默认暂停；离屏或切到后台会暂停帧循环。B 和旧版保留作设计对照。
+系统启用减少动态效果时显示静态触碰姿态；离屏或切到后台会暂停动画。B 和旧版保留作设计对照。

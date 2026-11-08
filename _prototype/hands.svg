@@ -1,0 +1,206 @@
+<svg class="hands-illustration" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 900" fill="none" aria-hidden="true">
+<style>
+.hands-illustration path,.hands-illustration circle,.hands-illustration ellipse{vector-effect:non-scaling-stroke;stroke-linejoin:round;stroke-linecap:round}
+.hands-illustration .hand-outline{fill:var(--paper,#f2efe8);stroke:var(--ink,#302b38);stroke-width:1.15}
+.hands-illustration .hand-detail{fill:none;stroke:var(--ink,#302b38);stroke-width:.9}
+.hands-illustration .hand-seam{fill:none;stroke:var(--ink,#302b38);stroke-width:.65;opacity:.5}
+.hands-illustration .hand-accent{fill:none;stroke:var(--accent,#ac6248);stroke-width:.9;opacity:.75}
+.hands-illustration .hand,.hands-illustration .index-digit{transform-box:view-box;animation-duration:9.6s;animation-timing-function:cubic-bezier(.45,0,.25,1);animation-iteration-count:infinite}
+.hands-illustration .hand--left{transform-origin:220px 410px;animation-name:hands-left-reach}
+.hands-illustration .hand--right{transform-origin:1400px 610px;animation-name:hands-right-reach}
+.hands-illustration .index--left{transform-origin:500px 380px;animation-name:hands-left-index}
+.hands-illustration .index--right{transform-origin:1140px 505px;animation-name:hands-right-index}
+.hands-illustration .contact-mark{fill:var(--accent,#ac6248);opacity:0;animation:hands-contact 9.6s ease-in-out infinite}
+.hands-hero[data-paused=true] .hand,.hands-hero[data-paused=true] .index-digit,.hands-hero[data-paused=true] .contact-mark{animation-play-state:paused}
+@keyframes hands-left-reach{0%,100%{transform:translate(-22px,9px) rotate(-.65deg)}40%,60%{transform:translate(0,0) rotate(0)}}
+@keyframes hands-right-reach{0%,100%{transform:translate(22px,5px) rotate(.65deg)}40%,60%{transform:translate(0,0) rotate(0)}}
+@keyframes hands-left-index{0%,100%{transform:rotate(-1.2deg)}40%,60%{transform:rotate(0)}}
+@keyframes hands-right-index{0%,100%{transform:rotate(1.1deg)}40%,60%{transform:rotate(0)}}
+@keyframes hands-contact{0%,34%,69%,100%{opacity:0}43%,57%{opacity:.7}}
+@media(prefers-reduced-motion:reduce){.hands-illustration .hand,.hands-illustration .index-digit,.hands-illustration .contact-mark{animation:none;transform:none}}
+</style>
+<g class="hand hand--left">
+<path class="hand-outline" d="M-100 291L162 331Q194 336 212 361L238 438Q244 462 226 480L-100 510Z"/>
+<path class="hand-seam" d="M-100 313L156 352Q174 356 181 372L207 443Q210 453 202 458L-100 488"/>
+<path class="hand-detail" d="M-100 340L147 374M-100 456L176 429"/>
+<path class="hand-outline" d="M183 341L218 334L265 454L229 482L207 469L170 368Z"/>
+<path class="hand-seam" d="M199 343L242 456M182 352L223 466"/>
+<circle class="hand-detail" cx="220" cy="407" r="24"/>
+<circle class="hand-accent" cx="220" cy="407" r="15"/>
+<circle class="hand-detail" cx="220" cy="407" r="6"/>
+<path class="hand-outline" d="M235 345Q282 306 341 314L423 336Q463 349 483 390L505 444Q512 482 482 509L401 548Q365 560 328 540L270 510Q241 491 232 457L211 393Q205 365 235 345Z"/>
+<path class="hand-detail" d="M262 362Q300 333 339 340L408 360Q437 371 449 399L464 440Q472 463 449 481L391 511Q364 522 337 507L290 481Q271 469 264 443L248 395Q242 375 262 362Z"/>
+<path class="hand-seam" d="M278 385L315 368Q324 365 333 369L392 389Q404 394 409 405L427 449Q430 458 421 463L384 480Q374 485 363 479L305 451Q294 445 291 435Z"/>
+<path class="hand-seam" d="M278 473Q314 497 343 506M284 356Q313 342 335 348"/>
+<circle class="hand-detail" cx="270" cy="382" r="3.4"/>
+<circle class="hand-detail" cx="334" cy="335" r="3.4"/>
+<circle class="hand-detail" cx="445" cy="397" r="3.4"/>
+<circle class="hand-detail" cx="384" cy="532" r="3.4"/>
+<path class="hand-outline" d="M451.71 450.12 L547.26 475.20 A21 21 0 0 0 558.74 434.80 L464.29 405.88 A23 23 0 0 0 451.71 450.12Z"/>
+<path class="hand-seam" d="M489.37 427.35L531.25 440.09"/>
+<path class="hand-seam" d="M470.07 448.65L479.12 416.79"/>
+<circle class="hand-detail" cx="458" cy="428" r="7.82"/>
+<circle class="hand-seam" cx="458" cy="428" r="2.53"/>
+<path class="hand-outline" d="M532.71 460.41 L552.57 519.38 A17 17 0 0 0 585.43 510.62 L573.29 449.59 A21 21 0 0 0 532.71 460.41Z"/>
+<path class="hand-seam" d="M542.45 474.11L571.67 466.32"/>
+<circle class="hand-detail" cx="553" cy="455" r="7.140000000000001"/>
+<circle class="hand-seam" cx="553" cy="455" r="2.31"/>
+<path class="hand-outline" d="M560.51 500.27 L515.14 529.88 A14 14 0 0 0 529.12 554.14 L577.49 529.73 A17 17 0 0 0 560.51 500.27Z"/>
+<path class="hand-seam" d="M551.84 510.76L564.06 531.97"/>
+<circle class="hand-detail" cx="569" cy="515" r="5.78"/>
+<circle class="hand-seam" cx="569" cy="515" r="1.87"/>
+<path class="hand-seam" d="M525.08 531.10L533.05 544.93"/>
+<path class="hand-outline" d="M424.95 489.57 L499.86 525.79 A20 20 0 0 0 518.14 490.21 L445.05 450.43 A22 22 0 0 0 424.95 489.57Z"/>
+<path class="hand-seam" d="M464.82 475.42L491.30 489.92"/>
+<path class="hand-seam" d="M442.44 491.63L456.91 463.45"/>
+<circle class="hand-detail" cx="435" cy="470" r="7.48"/>
+<circle class="hand-seam" cx="435" cy="470" r="2.42"/>
+<path class="hand-outline" d="M489.50 503.55 L479.43 561.22 A17 17 0 0 0 512.57 568.78 L528.50 512.45 A20 20 0 0 0 489.50 503.55Z"/>
+<path class="hand-seam" d="M491.63 519.42L519.70 525.83"/>
+<circle class="hand-detail" cx="509" cy="508" r="6.800000000000001"/>
+<circle class="hand-seam" cx="509" cy="508" r="2.2"/>
+<path class="hand-outline" d="M490.45 548.93 L449.04 567.47 A13 13 0 0 0 457.53 592.04 L501.55 581.07 A17 17 0 0 0 490.45 548.93Z"/>
+<path class="hand-seam" d="M479.95 557.59L487.95 580.73"/>
+<circle class="hand-detail" cx="496" cy="565" r="5.78"/>
+<circle class="hand-seam" cx="496" cy="565" r="1.87"/>
+<path class="hand-seam" d="M458.43 570.14L463.27 584.15"/>
+<path class="hand-outline" d="M386.14 524.59 L443.28 561.95 A17 17 0 0 0 462.72 534.05 L407.86 493.41 A19 19 0 0 0 386.14 524.59Z"/>
+<path class="hand-seam" d="M400.88 528.37L416.51 505.92"/>
+<circle class="hand-detail" cx="397" cy="509" r="6.460000000000001"/>
+<circle class="hand-seam" cx="397" cy="509" r="2.09"/>
+<path class="hand-outline" d="M437.79 540.40 L417.48 587.74 A14 14 0 0 0 442.52 600.26 L468.21 555.60 A17 17 0 0 0 437.79 540.40Z"/>
+<path class="hand-seam" d="M436.35 553.93L458.25 564.88"/>
+<circle class="hand-detail" cx="453" cy="548" r="5.78"/>
+<circle class="hand-seam" cx="453" cy="548" r="1.87"/>
+<path class="hand-outline" d="M427.03 580.32 L392.41 590.91 A11 11 0 0 0 397.09 612.41 L432.97 607.68 A14 14 0 0 0 427.03 580.32Z"/>
+<path class="hand-seam" d="M417.60 586.38L421.88 606.08"/>
+<circle class="hand-detail" cx="430" cy="594" r="4.760000000000001"/>
+<circle class="hand-seam" cx="430" cy="594" r="1.54"/>
+<path class="hand-seam" d="M401.23 593.84L403.90 606.09"/>
+<path class="hand-outline" d="M253.72 485.82 L294.32 560.07 A23 23 0 0 0 335.68 539.93 L302.28 462.18 A27 27 0 0 0 253.72 485.82Z"/>
+<path class="hand-seam" d="M302.59 499.84L311.45 521.70"/>
+<path class="hand-seam" d="M269.39 500.72L304.34 483.70"/>
+<circle class="hand-detail" cx="278" cy="474" r="9.180000000000001"/>
+<circle class="hand-seam" cx="278" cy="474" r="2.97"/>
+<path class="hand-outline" d="M304.58 570.51 L369.40 598.94 A19 19 0 0 0 386.60 565.06 L325.42 529.49 A23 23 0 0 0 304.58 570.51Z"/>
+<path class="hand-seam" d="M345.91 555.38L360.94 564.81"/>
+<path class="hand-seam" d="M322.88 572.58L337.88 543.05"/>
+<circle class="hand-detail" cx="315" cy="550" r="7.82"/>
+<circle class="hand-seam" cx="315" cy="550" r="2.53"/>
+<path class="hand-outline" d="M386.63 598.92 L420.46 577.18 A15 15 0 0 0 406.82 550.46 L369.37 565.08 A19 19 0 0 0 386.63 598.92Z"/>
+<path class="hand-seam" d="M396.91 587.71L384.48 563.34"/>
+<circle class="hand-detail" cx="378" cy="582" r="6.460000000000001"/>
+<circle class="hand-seam" cx="378" cy="582" r="2.09"/>
+<path class="hand-seam" d="M410.40 575.07L402.63 559.84"/>
+<g class="index-digit index--left">
+<path class="hand-outline" d="M476.74 403.20 L593.24 431.27 A23 23 0 0 0 604.76 386.73 L489.26 354.80 A25 25 0 0 0 476.74 403.20Z"/>
+<path class="hand-seam" d="M516.48 377.33L575.16 393.33"/>
+<path class="hand-seam" d="M496.65 401.12L505.66 366.27"/>
+<circle class="hand-detail" cx="483" cy="379" r="8.5"/>
+<circle class="hand-seam" cx="483" cy="379" r="2.75"/>
+<path class="hand-outline" d="M590.36 430.32 L703.24 470.68 A18 18 0 0 0 716.76 437.32 L607.64 387.68 A23 23 0 0 0 590.36 430.32Z"/>
+<path class="hand-seam" d="M630.26 411.75L692.32 439.06"/>
+<path class="hand-seam" d="M608.76 430.83L621.21 400.13"/>
+<circle class="hand-detail" cx="599" cy="409" r="7.82"/>
+<circle class="hand-seam" cx="599" cy="409" r="2.53"/>
+<path class="hand-outline" d="M705.00 471.29 L783.90 488.88 A13 13 0 0 0 791.12 463.90 L715.00 436.71 A18 18 0 0 0 705.00 471.29Z"/>
+<path class="hand-seam" d="M736.02 454.02L772.62 466.68"/>
+<path class="hand-seam" d="M719.37 470.20L726.57 445.30"/>
+<circle class="hand-detail" cx="710" cy="454" r="6.12"/>
+<circle class="hand-seam" cx="710" cy="454" r="1.98"/>
+<path class="hand-seam" d="M777.77 481.29L781.88 467.05"/>
+<circle class="left-tip" cx="800" cy="480" r=".1" fill="transparent"/>
+</g></g>
+<g class="hand hand--right">
+<path class="hand-outline" d="M1700 590L1446 534Q1417 527 1399 548L1366 627Q1357 652 1383 676L1700 758Z"/>
+<path class="hand-seam" d="M1700 614L1450 557Q1435 554 1427 571L1403 626Q1397 640 1413 650L1700 731"/>
+<path class="hand-detail" d="M1700 647L1455 590M1700 704L1435 627"/>
+<path class="hand-outline" d="M1432 532L1465 550L1421 676L1383 674L1368 650L1404 548Z"/>
+<path class="hand-seam" d="M1446 546L1406 662M1458 553L1420 667"/>
+<circle class="hand-detail" cx="1418" cy="606" r="24"/>
+<circle class="hand-accent" cx="1418" cy="606" r="15"/>
+<circle class="hand-detail" cx="1418" cy="606" r="6"/>
+<path class="hand-outline" d="M1400 563Q1385 518 1340 496L1255 475Q1219 468 1185 489L1137 524Q1114 544 1132 576L1205 649Q1241 686 1287 678L1367 650Q1406 631 1400 598Z"/>
+<path class="hand-detail" d="M1365 561Q1355 539 1324 525L1254 506Q1233 501 1211 514L1171 542Q1160 550 1172 568L1231 626Q1251 646 1277 640L1338 621Q1367 610 1365 589Z"/>
+<path class="hand-seam" d="M1328 556L1261 535Q1246 530 1234 540L1207 560L1255 608Q1265 618 1280 612L1336 593Z"/>
+<path class="hand-seam" d="M1234 496Q1264 491 1297 504M1366 615Q1341 635 1312 643"/>
+<circle class="hand-detail" cx="1368" cy="560" r="3.4"/>
+<circle class="hand-detail" cx="1250" cy="492" r="3.4"/>
+<circle class="hand-detail" cx="1156" cy="548" r="3.4"/>
+<circle class="hand-detail" cx="1280" cy="662" r="3.4"/>
+<path class="hand-outline" d="M1151.91 529.55 L1069.55 550.48 A21 21 0 0 0 1078.45 591.52 L1162.09 576.45 A24 24 0 0 0 1151.91 529.55Z"/>
+<path class="hand-seam" d="M1128.74 568.95L1100.21 573.91"/>
+<path class="hand-seam" d="M1135.75 539.93L1143.07 573.70"/>
+<circle class="hand-detail" cx="1157" cy="553" r="8.16"/>
+<circle class="hand-seam" cx="1157" cy="553" r="2.64"/>
+<path class="hand-outline" d="M1055.63 560.83 L1027.25 618.28 A18 18 0 0 0 1058.75 635.72 L1092.37 581.17 A21 21 0 0 0 1055.63 560.83Z"/>
+<path class="hand-seam" d="M1053.14 577.46L1079.60 592.10"/>
+<circle class="hand-detail" cx="1074" cy="571" r="7.140000000000001"/>
+<circle class="hand-seam" cx="1074" cy="571" r="2.31"/>
+<path class="hand-outline" d="M1028.52 637.70 L1057.42 670.06 A14 14 0 0 0 1079.94 653.42 L1057.48 616.30 A18 18 0 0 0 1028.52 637.70Z"/>
+<path class="hand-seam" d="M1040.60 645.56L1061.45 630.15"/>
+<circle class="hand-detail" cx="1043" cy="627" r="6.12"/>
+<circle class="hand-seam" cx="1043" cy="627" r="1.98"/>
+<path class="hand-seam" d="M1057.51 660.05L1070.34 650.56"/>
+<path class="hand-outline" d="M1182.32 578.36 L1116.38 622.05 A20 20 0 0 0 1137.62 655.95 L1205.68 615.64 A22 22 0 0 0 1182.32 578.36Z"/>
+<path class="hand-seam" d="M1174.10 619.86L1151.58 633.03"/>
+<path class="hand-seam" d="M1171.61 592.34L1188.43 619.18"/>
+<circle class="hand-detail" cx="1194" cy="597" r="7.48"/>
+<circle class="hand-seam" cx="1194" cy="597" r="2.42"/>
+<path class="hand-outline" d="M1107.64 633.99 L1095.54 692.74 A17 17 0 0 0 1128.46 701.26 L1146.36 644.01 A20 20 0 0 0 1107.64 633.99Z"/>
+<path class="hand-seam" d="M1109.30 649.92L1137.19 657.13"/>
+<circle class="hand-detail" cx="1127" cy="639" r="6.800000000000001"/>
+<circle class="hand-seam" cx="1127" cy="639" r="2.2"/>
+<path class="hand-outline" d="M1102.93 711.38 L1140.07 730.06 A13 13 0 0 0 1153.94 708.07 L1121.07 682.62 A17 17 0 0 0 1102.93 711.38Z"/>
+<path class="hand-seam" d="M1116.26 714.15L1129.31 693.45"/>
+<circle class="hand-detail" cx="1112" cy="697" r="5.78"/>
+<circle class="hand-seam" cx="1112" cy="697" r="1.87"/>
+<path class="hand-seam" d="M1136.28 721.07L1144.19 708.53"/>
+<path class="hand-outline" d="M1224.08 619.89 L1191.47 667.71 A17 17 0 0 0 1218.53 688.29 L1255.92 644.11 A20 20 0 0 0 1224.08 619.89Z"/>
+<path class="hand-seam" d="M1219.46 635.22L1242.38 652.66"/>
+<circle class="hand-detail" cx="1240" cy="632" r="6.800000000000001"/>
+<circle class="hand-seam" cx="1240" cy="632" r="2.2"/>
+<path class="hand-outline" d="M1188.40 681.65 L1202.33 731.01 A14 14 0 0 0 1229.67 724.99 L1221.60 674.35 A17 17 0 0 0 1188.40 681.65Z"/>
+<path class="hand-seam" d="M1195.79 693.08L1219.69 687.82"/>
+<circle class="hand-detail" cx="1205" cy="678" r="5.78"/>
+<circle class="hand-seam" cx="1205" cy="678" r="1.87"/>
+<path class="hand-outline" d="M1211.38 741.21 L1241.98 748.75 A11 11 0 0 0 1249.25 727.98 L1220.62 714.79 A14 14 0 0 0 1211.38 741.21Z"/>
+<path class="hand-seam" d="M1222.58 740.98L1229.24 721.95"/>
+<circle class="hand-detail" cx="1216" cy="728" r="4.760000000000001"/>
+<circle class="hand-seam" cx="1216" cy="728" r="1.54"/>
+<path class="hand-seam" d="M1236.00 741.64L1240.14 729.81"/>
+<path class="hand-outline" d="M1355.31 511.76 L1276.04 462.05 A23 23 0 0 0 1249.96 499.95 L1324.69 556.24 A27 27 0 0 0 1355.31 511.76Z"/>
+<path class="hand-seam" d="M1305.87 523.62L1280.02 503.89"/>
+<path class="hand-seam" d="M1334.34 506.51L1312.30 538.53"/>
+<circle class="hand-detail" cx="1340" cy="534" r="9.180000000000001"/>
+<circle class="hand-seam" cx="1340" cy="534" r="2.97"/>
+<path class="hand-outline" d="M1264.71 458.06 L1197.34 458.05 A18 18 0 0 0 1194.66 493.95 L1261.29 503.94 A23 23 0 0 0 1264.71 458.06Z"/>
+<path class="hand-seam" d="M1247.03 463.20L1244.57 496.23"/>
+<circle class="hand-detail" cx="1263" cy="481" r="7.82"/>
+<circle class="hand-seam" cx="1263" cy="481" r="2.53"/>
+<path class="hand-outline" d="M1183.94 462.64 L1156.01 493.23 A14 14 0 0 0 1174.77 514.01 L1208.06 489.36 A18 18 0 0 0 1183.94 462.64Z"/>
+<path class="hand-seam" d="M1177.29 475.42L1194.66 494.67"/>
+<circle class="hand-detail" cx="1196" cy="476" r="6.12"/>
+<circle class="hand-seam" cx="1196" cy="476" r="1.98"/>
+<path class="hand-seam" d="M1165.99 492.34L1176.68 504.19"/>
+<g class="index-digit index--right">
+<path class="hand-outline" d="M1161.63 484.43 L1039.08 464.38 A22 22 0 0 0 1030.92 507.62 L1152.37 533.57 A25 25 0 0 0 1161.63 484.43Z"/>
+<path class="hand-seam" d="M1123.70 512.90L1058.92 499.46"/>
+<path class="hand-seam" d="M1141.91 487.84L1135.24 523.21"/>
+<circle class="hand-detail" cx="1157" cy="509" r="8.5"/>
+<circle class="hand-seam" cx="1157" cy="509" r="2.75"/>
+<path class="hand-outline" d="M1036.70 464.07 L920.39 459.05 A18 18 0 0 0 917.61 494.95 L1033.30 507.93 A22 22 0 0 0 1036.70 464.07Z"/>
+<path class="hand-seam" d="M1005.41 492.53L940.38 485.88"/>
+<path class="hand-seam" d="M1019.77 468.93L1017.32 500.52"/>
+<circle class="hand-detail" cx="1035" cy="486" r="7.48"/>
+<circle class="hand-seam" cx="1035" cy="486" r="2.42"/>
+<path class="hand-outline" d="M918.55 459.01 L812.67 466.68 A13 13 0 0 0 813.32 492.67 L919.45 494.99 A18 18 0 0 0 918.55 459.01Z"/>
+<path class="hand-seam" d="M894.19 484.83L830.12 484.44"/>
+<path class="hand-seam" d="M905.18 464.38L905.83 490.30"/>
+<circle class="hand-detail" cx="919" cy="477" r="6.12"/>
+<circle class="hand-seam" cx="919" cy="477" r="1.98"/>
+<path class="hand-seam" d="M820.81 472.06L821.18 486.88"/>
+<circle class="right-tip" cx="800" cy="480" r=".1" fill="transparent"/>
+</g></g>
+<circle class="contact-mark" cx="800" cy="480" r="2.4"/>
+</svg>
