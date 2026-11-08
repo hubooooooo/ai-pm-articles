@@ -1,0 +1,8 @@
+title: AI 产品经理手记
+description: 把模型能力、业务流程和用户收益连起来的产品思考
+author: hubo
+theme: minima
+lang: zh-CN
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
