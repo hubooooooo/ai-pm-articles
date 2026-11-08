@@ -3,6 +3,7 @@ layout: post
 title: 用户到底省了多少事？——从「折叠子 Agent」谈 AI 办公产品的价值
 date: 2026-11-07
 categories: 产品思考
+permalink: /2026/11/07/user-effort-over-agent-count.html
 ---
 
 > 本文是对 Anthropic《Building agents: When to fold subagents into your main agent loop》一文的思考与延伸。
