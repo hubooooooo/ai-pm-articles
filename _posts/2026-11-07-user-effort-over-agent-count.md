@@ -4,6 +4,7 @@ title: 用户到底省了多少事？——从「折叠子 Agent」谈 AI 办公
 date: 2026-11-07
 categories: 产品思考
 permalink: /2026/11/07/user-effort-over-agent-count.html
+summary: 当模型已经能承担更多工作时，我们该怎么重新设计产品，才能让用户实际受益？
 ---
 
 > 本文是对 Anthropic《Building agents: When to fold subagents into your main agent loop》一文的思考与延伸。

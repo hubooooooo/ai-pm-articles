@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    {% seo %}
+    <link rel="stylesheet" href="{{ '/assets/css/main.css' | relative_url }}">
+    {% feed_meta %}
+    <script>
+      (function () {
+        var t;
+        try { t = localStorage.getItem('theme'); } catch (e) {}
+        if (t === 'light' || t === 'dark') document.documentElement.setAttribute('data-theme', t);
+      })();
+    </script>
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="site-header-inner">
+        <a class="site-title" href="{{ '/' | relative_url }}">
+          <span class="site-mark" aria-hidden="true"></span>{{ site.title }}
+        </a>
+        <div class="site-actions">
+          <a class="pill" href="https://github.com/hubooooooo/ai-pm-articles">GitHub</a>
+          <button class="pill" id="theme-toggle" aria-label="切换深浅色" title="切换深浅色">◐</button>
+        </div>
+      </div>
+    </header>
+    <main>
+      {{ content }}
+    </main>
+    <footer class="site-footer">
+      <div class="site-footer-inner">
+        <span>{{ site.title }}</span>
+        <span>© {{ 'now' | date: "%Y" }} {{ site.author }}</span>
+        <a href="https://github.com/hubooooooo/ai-pm-articles">GitHub</a>
+        <a href="{{ '/feed.xml' | relative_url }}">RSS</a>
+        <span>GitHub Pages · Jekyll</span>
+      </div>
+    </footer>
+    <script>
+      (function () {
+        var root = document.documentElement;
+        var btn = document.getElementById('theme-toggle');
+        btn.addEventListener('click', function () {
+          var cur = root.getAttribute('data-theme') ||
+            (window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light');
+          var next = cur === 'dark' ? 'light' : 'dark';
+          root.setAttribute('data-theme', next);
+          try { localStorage.setItem('theme', next); } catch (e) {}
+        });
+      })();
+    </script>
+  </body>
+</html>

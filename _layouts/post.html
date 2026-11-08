@@ -1,0 +1,17 @@
+---
+layout: default
+---
+<article class="post">
+  <header class="post-head">
+    <p class="post-meta">
+      <time datetime="{{ page.date | date: '%Y-%m-%d' }}">{{ page.date | date: "%Y.%m.%d" }}</time>{% if page.categories %} · {{ page.categories | join: ' · ' }}{% endif %}
+    </p>
+    <h1 class="post-title">{{ page.title }}</h1>
+  </header>
+  <div class="prose">
+    {{ content }}
+  </div>
+  <footer class="post-foot">
+    <a class="pill" href="{{ '/' | relative_url }}">← 返回文章列表</a>
+  </footer>
+</article>
