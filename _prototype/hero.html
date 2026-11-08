@@ -89,8 +89,8 @@ const notice = stage.querySelector('.notice');
 const hero = document.querySelector('.hero');
 
 const PALETTES = {
-  light: { ink: '#463e4d', inkSoft: '#7a7183', accent: '#b15432', fill: 'rgba(70,62,77,0.06)', link: 0.28 },
-  dark:  { ink: '#e8e1d6', inkSoft: '#b0a89c', accent: '#d98a5a', fill: 'rgba(232,225,214,0.05)', link: 0.32 }
+  light: { ink: '#463e4d', inkSoft: '#7a7183', accent: '#b15432', fill: '#463e4d', fillOpacity: 0.06, link: 0.28 },
+  dark:  { ink: '#e8e1d6', inkSoft: '#b0a89c', accent: '#d98a5a', fill: '#e8e1d6', fillOpacity: 0.05, link: 0.32 }
 };
 const darkMQ = matchMedia('(prefers-color-scheme: dark)');
 const palette = () => darkMQ.matches ? PALETTES.dark : PALETTES.light;
@@ -124,7 +124,7 @@ scene.add(group);
 function makeNode(geo, opts) {
   const g = new THREE.Group();
   const mesh = new THREE.Mesh(geo, new THREE.MeshBasicMaterial({
-    color: opts.fill, transparent: true, opacity: 1, depthWrite: true, side: THREE.DoubleSide
+    color: opts.fill, transparent: true, opacity: opts.fillOpacity, depthWrite: true, side: THREE.DoubleSide
   }));
   const edges = new THREE.LineSegments(
     new THREE.EdgesGeometry(geo, opts.threshold),
