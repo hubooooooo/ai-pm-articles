@@ -1,0 +1,2 @@
+# Preserve embedded upstream GLSL strings in the generated browser bundle.
+assets/js/hands-3d.js -whitespace linguist-generated=true

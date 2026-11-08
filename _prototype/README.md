@@ -1,21 +1,16 @@
 # 博客首页与历史视觉方向
 
-当前首页改为左右两只线稿机械手，在中央轻触。直接打开 `hands.html` 或 `hero.html` 查看，无需服务或外部依赖。
+当前首页使用真正的三维机械手模型、透视相机、轮廓线与真实遮挡。打开 `hands-3d.html`、`hands.html` 或 `hero.html` 可查看同一版本。
 
-- 中央仅保留“让想法相遇”，没有工程标注、介绍段落或图解控制面板。
-- 两手自动缓慢靠近、触碰、回弹。支持系统减少动态效果；离屏和后台暂停。
-- 运行 `python3 build_hands.py` 更新 SVG、预览与 `_includes/home-hands.html`。
-- 正式资源为 `assets/css/home-hands.css` 和 `assets/js/home-hands.js`。
+- 首屏只保留“让想法相遇”，没有介绍段落、工程标注或场景控制面板。
+- 两手缓慢轻触并活动关节，鼠标移动带有轻微相机视差。
+- 减少动态效果时停止自动播放；离屏或后台暂停渲染。
+- 无 WebGL 时显示同一场景渲染的三维静帧，分别适配桌面、手机与深浅色。
 
-历史方案保留作对照：
+源文件和构建说明在 `three-hands/README.md`。正式资源是 `assets/js/hands-3d.js`、`assets/css/hands-3d.css` 和 `assets/images/hands-3d-*.png`。原始三维资产及许可保留在 `three-hands/vendor/shadow_hand/`，公开许可副本位于 `assets/licenses/`。
 
-- `engineering.template.html`：此前的精密装置方案。
-- `editorial.html`：编辑手记，大字排版与带批注的纸页。
-- `hero-v1.html`：保留的旧版，仅供对照；它仍需要联网加载 three.js。
-- `review/`：实际浏览器渲染截图。
+首页模板位于 `_layouts/home.html`，文章目录读取 `site.posts`。文章正文与链接保持独立。
 
-历史装置方案的源文件为 `engineering.template.html`、`build_art.py`、`prototype.css` 和 `prototype.js`，不再用于当前首页。
+`build_hands.py`、`hands.svg`、`hands.template.html` 是旧二维方案；`build_art.py` 与 `engineering.template.html` 是历史装置方案，均不再用于当前首页。`editorial.html` 和 `hero-v1.html` 仅保留作对照。
 
-首页位于 `_layouts/home.html`，文章目录继续读取 `site.posts`，不绑定首篇文章。
-
-系统启用减少动态效果时显示静态触碰姿态；离屏或切到后台会暂停动画。B 和旧版保留作设计对照。
+`review/` 保存实际浏览器截图、动效预览与验证结果。

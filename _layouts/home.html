@@ -6,12 +6,14 @@
   {% seo %}
   {% feed_meta %}
   <link rel="stylesheet" href="{{ '/assets/css/home-hands.css' | relative_url }}">
+  <link rel="stylesheet" href="{{ '/assets/css/hands-3d.css' | relative_url }}">
   <script>
     (function(){try{var t=localStorage.getItem('theme');if(t==='light'||t==='dark')document.documentElement.dataset.theme=t;}catch(e){}})();
   </script>
   <script src="{{ '/assets/js/home-hands.js' | relative_url }}" defer></script>
+  <script src="{{ '/assets/js/hands-3d.js' | relative_url }}" defer></script>
 </head>
-<body class="hands-home">
+<body class="hands-home hands-3d-home">
 <a class="skip-link" href="#articles">跳到文章</a>
 <header class="hands-masthead">
   <a class="hands-brand" href="{{ '/' | relative_url }}">{{ site.title }}</a>
@@ -19,7 +21,7 @@
 </header>
 <main id="main">
   <section class="hands-hero" aria-labelledby="hero-title">
-    <div class="hands-art">{% include home-hands.html %}</div>
+    {% include home-hands-3d.html %}
     <div class="hands-copy"><h1 id="hero-title"><a href="#articles">让想法相遇</a></h1></div>
   </section>
   <section id="articles" class="writing" aria-labelledby="writing-title">
