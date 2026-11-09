@@ -89,6 +89,8 @@ function boot(){
  const left=makeHand('left'),right=makeHand('right');
  const settings={leftRoll:-1.05,rightRoll:.8,scale:21,visibleWidth:10.8};
  const tmp=new THREE.Vector3();
+ const contactPoint=new THREE.Vector3(0,-.28,0);
+ const contactSignal=stage.querySelector('.contact-signal');
  const pointer=new THREE.Vector2();
  let elapsed=5.5,previous=0,raf=0,frames=0,inView=true;
  let width=1,height=1,distance=11;
@@ -131,6 +133,13 @@ function boot(){
   place(left,time);place(right,time);
   camera.position.set(pointer.x*.8,.28+pointer.y*.55,distance);camera.lookAt(0,0,0);
   effect.render(scene,camera);stage.dataset.frame=String(++frames);stage.dataset.time=time.toFixed(3);
+  if(contactSignal){
+   const point=contactPoint.clone().project(camera);
+   const approach=(1-Math.cos(time*2*Math.PI/11))/2;
+   contactSignal.style.setProperty('--contact-x',((point.x*.5+.5)*width).toFixed(2)+'px');
+   contactSignal.style.setProperty('--contact-y',((-point.y*.5+.5)*height).toFixed(2)+'px');
+   contactSignal.style.setProperty('--contact-alpha',(THREE.MathUtils.smoothstep(approach,.82,.995)*.7).toFixed(3));
+  }
  }
  function tick(timestamp){
   raf=0;if(document.hidden||!inView||reduced.matches){previous=0;return;}

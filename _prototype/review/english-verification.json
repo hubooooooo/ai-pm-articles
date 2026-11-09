@@ -1,0 +1,333 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "documentWidth": 1440,
+    "title": "让想法相遇",
+    "english": "WHERE IDEAS MEET.",
+    "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "headerEnglish": "flex",
+    "copy": {
+      "x": 592.125,
+      "y": 342.1484375,
+      "w": 255.75,
+      "h": 101.703125,
+      "right": 847.875,
+      "bottom": 443.8515625
+    },
+    "brand": {
+      "x": 661.234375,
+      "y": 27.5,
+      "w": 117.53125,
+      "h": 21,
+      "right": 778.765625,
+      "bottom": 48.5
+    },
+    "nav": {
+      "x": 798.765625,
+      "y": 17.5,
+      "w": 605.234375,
+      "h": 41,
+      "right": 1404,
+      "bottom": 58.5
+    },
+    "signal": {
+      "x": 697,
+      "y": 552.28125,
+      "w": 46,
+      "h": 46,
+      "right": 743,
+      "bottom": 598.28125
+    },
+    "signalOpacity": "0.7",
+    "tips": [
+      {
+        "x": 719.333869692592,
+        "y": 575.2932869666544
+      },
+      {
+        "x": 720.6661303074081,
+        "y": 575.2932869666544
+      }
+    ],
+    "sceneButtons": 0,
+    "articleLinks": 2,
+    "duplicateIds": [],
+    "stats": {
+      "meshes": 48,
+      "triangles": 114700,
+      "perspective": true,
+      "frames": 4,
+      "time": 5.5,
+      "drawCalls": 92
+    },
+    "theme": "light",
+    "playbackFrames": 14,
+    "exploreScroll": {
+      "y": 318,
+      "hash": "#articles",
+      "articleY": 757
+    },
+    "errors": []
+  },
+  {
+    "name": "tablet",
+    "width": 1024,
+    "documentWidth": 1024,
+    "title": "让想法相遇",
+    "english": "WHERE IDEAS MEET.",
+    "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "headerEnglish": "flex",
+    "copy": {
+      "x": 421.0859375,
+      "y": 302.1328125,
+      "w": 181.828125,
+      "h": 81.734375,
+      "right": 602.9140625,
+      "bottom": 383.8671875
+    },
+    "brand": {
+      "x": 453.234375,
+      "y": 27.5,
+      "w": 117.53125,
+      "h": 21,
+      "right": 570.765625,
+      "bottom": 48.5
+    },
+    "nav": {
+      "x": 590.765625,
+      "y": 17.5,
+      "w": 397.234375,
+      "h": 41,
+      "right": 988,
+      "bottom": 58.5
+    },
+    "signal": {
+      "x": 489,
+      "y": 491.515625,
+      "w": 46,
+      "h": 46,
+      "right": 535,
+      "bottom": 537.515625
+    },
+    "signalOpacity": "0.7",
+    "tips": [
+      {
+        "x": 511.52616854240154,
+        "y": 514.5300332999166
+      },
+      {
+        "x": 512.4738314575985,
+        "y": 514.5300332999166
+      }
+    ],
+    "sceneButtons": 0,
+    "articleLinks": 2,
+    "duplicateIds": [],
+    "stats": {
+      "meshes": 48,
+      "triangles": 114700,
+      "perspective": true,
+      "frames": 4,
+      "time": 5.5,
+      "drawCalls": 92
+    },
+    "theme": "light",
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "documentWidth": 390,
+    "title": "让想法相遇",
+    "english": "WHERE IDEAS MEET.",
+    "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "headerEnglish": "none",
+    "copy": {
+      "x": 107,
+      "y": 327.5,
+      "w": 176,
+      "h": 77,
+      "right": 283,
+      "bottom": 404.5
+    },
+    "brand": {
+      "x": 24,
+      "y": 24,
+      "w": 97.5625,
+      "h": 18,
+      "right": 121.5625,
+      "bottom": 42
+    },
+    "nav": {
+      "x": 300,
+      "y": 13,
+      "w": 66,
+      "h": 40,
+      "right": 366,
+      "bottom": 53
+    },
+    "signal": {
+      "x": 177,
+      "y": 510.6875,
+      "w": 36,
+      "h": 36,
+      "right": 213,
+      "bottom": 546.6875
+    },
+    "signalOpacity": "0.7",
+    "tips": [
+      {
+        "x": 194.77327807723367,
+        "y": 528.6960121027531
+      },
+      {
+        "x": 195.22672192276636,
+        "y": 528.6960121027531
+      }
+    ],
+    "sceneButtons": 0,
+    "articleLinks": 2,
+    "duplicateIds": [],
+    "stats": {
+      "meshes": 48,
+      "triangles": 114700,
+      "perspective": true,
+      "frames": 4,
+      "time": 5.5,
+      "drawCalls": 92
+    },
+    "theme": "light",
+    "errors": []
+  },
+  {
+    "name": "small-mobile",
+    "width": 320,
+    "documentWidth": 320,
+    "title": "让想法相遇",
+    "english": "WHERE IDEAS MEET.",
+    "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "headerEnglish": "none",
+    "copy": {
+      "x": 72,
+      "y": 294.5,
+      "w": 176,
+      "h": 77,
+      "right": 248,
+      "bottom": 371.5
+    },
+    "brand": {
+      "x": 24,
+      "y": 24,
+      "w": 97.5625,
+      "h": 18,
+      "right": 121.5625,
+      "bottom": 42
+    },
+    "nav": {
+      "x": 230,
+      "y": 13,
+      "w": 66,
+      "h": 40,
+      "right": 296,
+      "bottom": 53
+    },
+    "signal": {
+      "x": 142,
+      "y": 475.40625,
+      "w": 36,
+      "h": 36,
+      "right": 178,
+      "bottom": 511.40625
+    },
+    "signalOpacity": "0.7",
+    "tips": [
+      {
+        "x": 159.81396781057927,
+        "y": 493.41753526426714
+      },
+      {
+        "x": 160.18603218942076,
+        "y": 493.41753526426703
+      }
+    ],
+    "sceneButtons": 0,
+    "articleLinks": 2,
+    "duplicateIds": [],
+    "stats": {
+      "meshes": 48,
+      "triangles": 114700,
+      "perspective": true,
+      "frames": 4,
+      "time": 5.5,
+      "drawCalls": 92
+    },
+    "theme": "light",
+    "errors": []
+  },
+  {
+    "name": "dark",
+    "width": 1440,
+    "documentWidth": 1440,
+    "title": "让想法相遇",
+    "english": "WHERE IDEAS MEET.",
+    "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "headerEnglish": "flex",
+    "copy": {
+      "x": 592.125,
+      "y": 342.1484375,
+      "w": 255.75,
+      "h": 101.703125,
+      "right": 847.875,
+      "bottom": 443.8515625
+    },
+    "brand": {
+      "x": 661.234375,
+      "y": 27.5,
+      "w": 117.53125,
+      "h": 21,
+      "right": 778.765625,
+      "bottom": 48.5
+    },
+    "nav": {
+      "x": 798.765625,
+      "y": 17.5,
+      "w": 605.234375,
+      "h": 41,
+      "right": 1404,
+      "bottom": 58.5
+    },
+    "signal": {
+      "x": 697,
+      "y": 552.28125,
+      "w": 46,
+      "h": 46,
+      "right": 743,
+      "bottom": 598.28125
+    },
+    "signalOpacity": "0.7",
+    "tips": [
+      {
+        "x": 719.333869692592,
+        "y": 575.2932869666544
+      },
+      {
+        "x": 720.6661303074081,
+        "y": 575.2932869666544
+      }
+    ],
+    "sceneButtons": 0,
+    "articleLinks": 2,
+    "duplicateIds": [],
+    "stats": {
+      "meshes": 48,
+      "triangles": 114700,
+      "perspective": true,
+      "frames": 4,
+      "time": 5.5,
+      "drawCalls": 92
+    },
+    "theme": "dark",
+    "errors": []
+  }
+]
