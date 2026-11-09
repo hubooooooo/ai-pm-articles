@@ -1,0 +1,62 @@
+[
+  {
+    "name": "desktop",
+    "width": 1440,
+    "documentWidth": 1440,
+    "theme": "light",
+    "accent": "#36733f",
+    "mark": "rgb(54, 115, 63)",
+    "quoteBorder": "rgb(54, 115, 63)",
+    "background": "oklch(0.945 0.012 78)",
+    "text": "oklch(0.26 0.05 310)",
+    "accentContrast": 4.851668790840243,
+    "readingContrast": 13.410067052927191,
+    "contentUnchanged": true,
+    "errors": []
+  },
+  {
+    "name": "dark",
+    "width": 1440,
+    "documentWidth": 1440,
+    "theme": "dark",
+    "accent": "#afe873",
+    "mark": "rgb(175, 232, 115)",
+    "quoteBorder": "rgb(175, 232, 115)",
+    "background": "oklch(0.205 0.007 68)",
+    "text": "oklch(0.93 0.025 90)",
+    "accentContrast": 12.447246190286156,
+    "readingContrast": 14.607463840193862,
+    "contentUnchanged": true,
+    "errors": []
+  },
+  {
+    "name": "mobile",
+    "width": 390,
+    "documentWidth": 390,
+    "theme": "light",
+    "accent": "#36733f",
+    "mark": "rgb(54, 115, 63)",
+    "quoteBorder": "rgb(54, 115, 63)",
+    "background": "oklch(0.945 0.012 78)",
+    "text": "oklch(0.26 0.05 310)",
+    "accentContrast": 4.851668790840243,
+    "readingContrast": 13.410067052927191,
+    "contentUnchanged": true,
+    "errors": []
+  },
+  {
+    "name": "small-mobile",
+    "width": 320,
+    "documentWidth": 320,
+    "theme": "light",
+    "accent": "#36733f",
+    "mark": "rgb(54, 115, 63)",
+    "quoteBorder": "rgb(54, 115, 63)",
+    "background": "oklch(0.945 0.012 78)",
+    "text": "oklch(0.26 0.05 310)",
+    "accentContrast": 4.851668790840243,
+    "readingContrast": 13.410067052927191,
+    "contentUnchanged": true,
+    "errors": []
+  }
+]

@@ -6,6 +6,11 @@
     "title": "让想法相遇",
     "english": "WHERE IDEAS MEET.",
     "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "palette": {
+      "accent": "#36733f",
+      "art": "#639a35",
+      "signal": "#83b93b"
+    },
     "headerEnglish": "flex",
     "copy": {
       "x": 592.125,
@@ -73,6 +78,8 @@
     "duplicateIds": [],
     "stats": {
       "meshes": 48,
+      "accentMeshes": 6,
+      "accentColor": "#639a35",
       "triangles": 114700,
       "perspective": true,
       "frames": 4,
@@ -80,7 +87,7 @@
       "drawCalls": 92
     },
     "theme": "light",
-    "playbackFrames": 14,
+    "playbackFrames": 13,
     "exploreScroll": {
       "y": 318,
       "hash": "#articles",
@@ -95,6 +102,11 @@
     "title": "让想法相遇",
     "english": "WHERE IDEAS MEET.",
     "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "palette": {
+      "accent": "#36733f",
+      "art": "#639a35",
+      "signal": "#83b93b"
+    },
     "headerEnglish": "flex",
     "copy": {
       "x": 421.0859375,
@@ -162,9 +174,11 @@
     "duplicateIds": [],
     "stats": {
       "meshes": 48,
+      "accentMeshes": 6,
+      "accentColor": "#639a35",
       "triangles": 114700,
       "perspective": true,
-      "frames": 3,
+      "frames": 4,
       "time": 5.5,
       "drawCalls": 92
     },
@@ -178,6 +192,11 @@
     "title": "让想法相遇",
     "english": "WHERE IDEAS MEET.",
     "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "palette": {
+      "accent": "#36733f",
+      "art": "#639a35",
+      "signal": "#83b93b"
+    },
     "headerEnglish": "none",
     "copy": {
       "x": 107,
@@ -245,6 +264,8 @@
     "duplicateIds": [],
     "stats": {
       "meshes": 48,
+      "accentMeshes": 6,
+      "accentColor": "#639a35",
       "triangles": 114700,
       "perspective": true,
       "frames": 4,
@@ -261,6 +282,11 @@
     "title": "让想法相遇",
     "english": "WHERE IDEAS MEET.",
     "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "palette": {
+      "accent": "#36733f",
+      "art": "#639a35",
+      "signal": "#83b93b"
+    },
     "headerEnglish": "none",
     "copy": {
       "x": 72,
@@ -328,6 +354,8 @@
     "duplicateIds": [],
     "stats": {
       "meshes": 48,
+      "accentMeshes": 6,
+      "accentColor": "#639a35",
       "triangles": 114700,
       "perspective": true,
       "frames": 4,
@@ -344,6 +372,11 @@
     "title": "让想法相遇",
     "english": "WHERE IDEAS MEET.",
     "heroText": "让想法相遇\n\nWHERE IDEAS MEET.\n\nEXPLORE NOTES",
+    "palette": {
+      "accent": "#afe873",
+      "art": "#9fdd63",
+      "signal": "#b4f477"
+    },
     "headerEnglish": "flex",
     "copy": {
       "x": 592.125,
@@ -411,6 +444,8 @@
     "duplicateIds": [],
     "stats": {
       "meshes": 48,
+      "accentMeshes": 6,
+      "accentColor": "#9fdd63",
       "triangles": 114700,
       "perspective": true,
       "frames": 4,

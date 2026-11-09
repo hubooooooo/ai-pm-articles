@@ -23,7 +23,9 @@ function boot(){
  const effect=new OutlineEffect(renderer,{defaultThickness:.00105,defaultColor:[.025,.02,.035],defaultAlpha:.85,defaultKeepAlive:true});
  const surface=new THREE.MeshBasicMaterial({color:'#f2efe8',polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1});
  const metal=new THREE.MeshBasicMaterial({color:'#f2efe8',polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1});
- for(const material of [surface,metal]){
+ const accentSurface=surface.clone(),accentMetal=metal.clone();
+ const surfaces=[surface,metal,accentSurface,accentMetal];
+ for(const material of surfaces){
   material.onBeforeCompile=shader=>{
    shader.vertexShader='varying vec3 vInkNormal;\n'+shader.vertexShader.replace('#include <begin_vertex>','vInkNormal=normalize(normalMatrix*normal);\n#include <begin_vertex>');
    shader.fragmentShader='varying vec3 vInkNormal;\n'+shader.fragmentShader.replace('#include <opaque_fragment>','float inkVolume=.92+.08*max(0.0,dot(normalize(vInkNormal),normalize(vec3(-.35,.55,1.0))));\noutgoingLight*=inkVolume;\n#include <opaque_fragment>');
@@ -31,6 +33,8 @@ function boot(){
   material.customProgramCacheKey=()=> 'notebook-ink-volume-v1';
  }
  const lineMaterial=new THREE.LineBasicMaterial({color:'#3e3549',transparent:true,opacity:.68,depthTest:true});
+ const accentLineMaterial=new THREE.LineBasicMaterial({color:'#639a35',transparent:true,opacity:.92,depthTest:true});
+ let accentMeshCount=0;
  const geometry={},edges={};
  function bytes(base64){const binary=atob(base64);const array=new Uint8Array(binary.length);for(let i=0;i<binary.length;i++)array[i]=binary.charCodeAt(i);return array.buffer;}
  for(const [name,data] of Object.entries(packedGeometry)){
@@ -60,9 +64,12 @@ function boot(){
    }
    bodies.set(item.name,moving);
    for(const geom of item.geoms){
-    const def=spec.meshes[geom.mesh],material=geom.material==='metallic'?metal:surface;
+    const highlighted=/(?:wrist|ffmiddle|ffdistal)$/.test(item.name);
+    const isMetal=geom.material==='metallic';
+    const def=spec.meshes[geom.mesh],material=highlighted?(isMetal?accentMetal:accentSurface):(isMetal?metal:surface);
     const mesh=new THREE.Mesh(geometry[geom.mesh],material);mesh.position.fromArray(geom.pos);mesh.quaternion.copy(quat(geom.quat));mesh.scale.fromArray(def.scale);
-    const edge=new THREE.LineSegments(edges[geom.mesh],lineMaterial);edge.renderOrder=2;mesh.add(edge);moving.add(mesh);
+    const edge=new THREE.LineSegments(edges[geom.mesh],highlighted?accentLineMaterial:lineMaterial);edge.renderOrder=2;mesh.add(edge);moving.add(mesh);
+    if(highlighted)accentMeshCount++;
    }
    for(const child of item.children)moving.add(build(child));
    return base;
@@ -115,10 +122,16 @@ function boot(){
  }
  function updateTheme(){
   const dark=document.documentElement.dataset.theme==='dark';
-  surface.color.set(dark?'#232522':'#f2efe8');metal.color.copy(surface.color);
+  surface.color.set(dark?'#232522':'#f2efe8');
+  for(const material of [metal,accentSurface,accentMetal])material.color.copy(surface.color);
   lineMaterial.color.set(dark?'#f1eadc':'#302538');lineMaterial.opacity=dark?.8:.9;
   const color=new THREE.Color(dark?'#f1eadc':'#302538');
-  for(const material of [surface,metal])material.userData.outlineParameters={color:color.toArray(),thickness:.00135,alpha:.95,visible:true,keepAlive:true};
+  const accentColor=new THREE.Color(getComputedStyle(document.documentElement).getPropertyValue('--accent-art').trim()||(dark?'#9fdd63':'#639a35'));
+  accentLineMaterial.color.copy(accentColor);accentLineMaterial.opacity=dark?.86:.92;
+  for(const material of surfaces){
+   const highlighted=material===accentSurface||material===accentMetal;
+   material.userData.outlineParameters={color:(highlighted?accentColor:color).toArray(),thickness:highlighted?.0015:.00135,alpha:.95,visible:true,keepAlive:true};
+  }
   if(stage.dataset.ready==='true')draw(elapsed);
  }
  function resize(){
@@ -165,7 +178,7 @@ function boot(){
   play(){resume();},
   view(x,y){pointer.set(x,y);draw(elapsed);},
   configure(values){Object.assign(settings,values);resize();},
-  stats(){return {meshes:[...scene.children].reduce((sum,item)=>{item.traverse(n=>{if(n.isMesh)sum++;});return sum;},0),triangles:renderer.info.render.triangles,perspective:camera.isPerspectiveCamera,frames,time:elapsed,drawCalls:renderer.info.render.calls};},
+  stats(){return {meshes:[...scene.children].reduce((sum,item)=>{item.traverse(n=>{if(n.isMesh)sum++;});return sum;},0),accentMeshes:accentMeshCount,accentColor:'#'+accentLineMaterial.color.getHexString(),triangles:renderer.info.render.triangles,perspective:camera.isPerspectiveCamera,frames,time:elapsed,drawCalls:renderer.info.render.calls};},
   tips(){return [left,right].map(hand=>hand.tip.getWorldPosition(new THREE.Vector3()).project(camera).toArray());}
  };
  if(reduced.matches)draw(5.5);else resume();

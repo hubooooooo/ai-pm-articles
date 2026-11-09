@@ -1,0 +1,63 @@
+{
+  "posters": [
+    {
+      "device": "desktop",
+      "theme": "light",
+      "width": 2160,
+      "height": 1500
+    },
+    {
+      "device": "desktop",
+      "theme": "dark",
+      "width": 2160,
+      "height": 1500
+    },
+    {
+      "device": "mobile",
+      "theme": "light",
+      "width": 585,
+      "height": 1449
+    },
+    {
+      "device": "mobile",
+      "theme": "dark",
+      "width": 585,
+      "height": 1449
+    }
+  ],
+  "interaction": {
+    "blank": "hands-hero",
+    "button": "theme-toggle",
+    "buttonX": 352,
+    "buttonY": 33,
+    "themeClick": true,
+    "renderedAccent": "#639a35",
+    "cssAccent": "#639a35",
+    "reducedMotionFrames": 0
+  },
+  "fallback": {
+    "state": "fallback",
+    "top": 0,
+    "posterTop": 0,
+    "posterWidth": 2160,
+    "posterHeight": 1500,
+    "canvasVisibility": "hidden"
+  },
+  "visualAccentArea": [
+    {
+      "image": "english-desktop.png",
+      "greenPixels": 3070,
+      "fraction": 0.00213
+    },
+    {
+      "image": "english-dark.png",
+      "greenPixels": 4592,
+      "fraction": 0.00319
+    },
+    {
+      "image": "english-mobile.png",
+      "greenPixels": 731,
+      "fraction": 0.00187
+    }
+  ]
+}

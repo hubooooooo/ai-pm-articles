@@ -1,0 +1,18 @@
+/* Shared accents: readable green for UI, brighter lime for the 3D line work. */
+:root{
+  --accent:#36733f;
+  --accent-art:#639a35;
+  --accent-signal:#83b93b;
+}
+:root[data-theme=dark]{
+  --accent:#afe873;
+  --accent-art:#9fdd63;
+  --accent-signal:#b4f477;
+}
+@media(prefers-color-scheme:dark){
+  :root:not([data-theme=light]):not([data-theme=dark]){
+    --accent:#afe873;
+    --accent-art:#9fdd63;
+    --accent-signal:#b4f477;
+  }
+}

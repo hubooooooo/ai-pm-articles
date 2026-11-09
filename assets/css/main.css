@@ -5,7 +5,6 @@
   --background: light-dark(oklch(94.5% .012 78), oklch(20.5% .007 68));
   --foreground: light-dark(oklch(26% .05 310), oklch(93% .025 90));
   --muted-foreground: light-dark(oklch(47% .035 310), oklch(75% .02 85));
-  --accent: light-dark(oklch(55% .19 30), oklch(69% .16 33));
   --muted: light-dark(oklch(96.5% .008 78), oklch(24% .009 70));
   --muted-2: light-dark(oklch(98% .006 78), oklch(27.5% .01 70));
   --hairline: light-dark(oklch(88.5% .012 78), oklch(30.5% .011 70));
