@@ -1,3 +1,7 @@
+/* The scene reaches the viewport edge; the navigation does not reserve a strip. */
+.hands-3d-home .hands-masthead{position:absolute;inset:0 0 auto;background:transparent;pointer-events:none}
+.hands-3d-home .hands-masthead a,.hands-3d-home .hands-masthead button{pointer-events:auto}
+.hands-3d-home .hands-hero{height:100svh;min-height:686px;max-height:1176px}
 .hands-3d-stage{position:absolute;inset:0;pointer-events:none;z-index:1}
 .hands-3d-stage canvas{position:absolute;inset:0;display:block;width:100%;height:100%}
 .hands-3d-stage .hands-3d-poster{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -18,12 +22,13 @@
 .hero-en{margin:15px 0 0;font:11px/1.6 var(--mono);letter-spacing:.22em;color:var(--detail-ink);white-space:nowrap}
 .en-period{color:var(--accent);font-weight:700;margin-left:2px;letter-spacing:0}
 .hero-corner{position:absolute;z-index:0;width:13px;height:13px;border:0 solid var(--line);opacity:.78;pointer-events:none}
-.corner-tl{left:35px;top:19px;border-width:1px 0 0 1px}.corner-tr{right:35px;top:19px;border-width:1px 1px 0 0}.corner-bl{left:35px;bottom:31px;border-width:0 0 1px 1px}.corner-br{right:35px;bottom:31px;border-width:0 1px 1px 0}
+.corner-tl{left:35px;top:95px;border-width:1px 0 0 1px}.corner-tr{right:35px;top:95px;border-width:1px 1px 0 0}.corner-bl{left:35px;bottom:31px;border-width:0 0 1px 1px}.corner-br{right:35px;bottom:31px;border-width:0 1px 1px 0}
 .hero-read{position:absolute;left:50%;bottom:39px;transform:translateX(-50%);z-index:3;display:inline-flex;align-items:center;gap:19px;color:var(--detail-ink);font:10px/1.5 var(--mono);letter-spacing:.12em;padding:6px 0;white-space:nowrap}
 .hero-read svg{width:9px;height:13px;fill:none;stroke:var(--accent);stroke-width:1;transition:transform .2s}
 .hero-read:hover{color:var(--accent)}.hero-read:hover svg{transform:translateY(3px)}
 .contact-signal{position:absolute;left:var(--contact-x,50%);top:var(--contact-y,55%);width:46px;height:46px;transform:translate(-50%,-50%);border-radius:50%;opacity:var(--contact-alpha,0);background:radial-gradient(circle,color-mix(in srgb,var(--accent) 28%,transparent),transparent 68%);pointer-events:none}
 .contact-signal::after{content:"";position:absolute;left:50%;top:50%;width:3px;height:3px;transform:translate(-50%,-50%);border-radius:50%;background:var(--accent);opacity:.7}
 .writing-heading>span[lang=en]{font:10px var(--mono);letter-spacing:.14em}.writing-separator{display:inline-block;margin:0 13px;color:var(--accent);opacity:.65}
-@media(max-width:700px){.hands-3d-home .masthead-en{display:none}.hands-3d-home .hands-copy{top:calc(50% - 150px)}.hands-3d-home .hands-copy h1{font-size:32px}.hero-en{font-size:10px;letter-spacing:.19em;margin-top:13px}.hero-corner{width:10px;height:10px;opacity:.65}.corner-tl{left:23px;top:18px}.corner-tr{right:23px;top:18px}.corner-bl{left:23px;bottom:27px}.corner-br{right:23px;bottom:27px}.hero-read{bottom:33px;font-size:9px;gap:14px}.contact-signal{width:36px;height:36px}}
+@media(max-width:1100px){.hands-3d-home .hands-hero{min-height:696px}}
+@media(max-width:700px){.hands-3d-home .hands-hero{min-height:626px;max-height:966px}.hands-3d-home .masthead-en{display:none}.hands-3d-home .hands-copy{top:calc(50% - 150px)}.hands-3d-home .hands-copy h1{font-size:32px}.hero-en{font-size:10px;letter-spacing:.19em;margin-top:13px}.hero-corner{width:10px;height:10px;opacity:.65}.corner-tl{left:23px;top:84px}.corner-tr{right:23px;top:84px}.corner-bl{left:23px;bottom:27px}.corner-br{right:23px;bottom:27px}.hero-read{bottom:33px;font-size:9px;gap:14px}.contact-signal{width:36px;height:36px}}
 @media(prefers-reduced-motion:reduce){.hero-read svg{transition:none}}
